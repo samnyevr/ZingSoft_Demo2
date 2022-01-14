@@ -12,6 +12,10 @@
         />
         <title>Demo2</title>
         <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+        <script
+            src="https://cdn.zinggrid.com/zinggrid.min.js"
+            defer
+        ></script>
         <link
             rel="stylesheet"
             href="styles.css"
@@ -19,43 +23,169 @@
     </head>
     <body>
         <nav><h1>Fitness</h1></nav>
-        <section class="chart">
-            <section class="dietButton">
-                <button class="diet1">
-                    Diet Category
-                </button>
-                <button class="diet2">
-                    Diet Goal
-                </button>
-                <button
-                    class="dietModify"
+        <section class="content">
+            <section class="chart">
+                <section
+                    class="dietButton"
                 >
-                    Modify My Food
-                    Intake
-                </button>
+                    <button
+                        class="diet1"
+                    >
+                        Diet Category
+                    </button>
+                    <button
+                        class="diet2"
+                    >
+                        Diet Goal
+                    </button>
+                    <button
+                        class="dietModify"
+                    >
+                        Modify My Food
+                        Intake
+                    </button>
+                </section>
+                <section
+                    class="dietContent"
+                >
+                    <div
+                        id="diet"
+                        class="hidden"
+                    ></div>
+                    <div
+                        id="diet2"
+                        class="hidden"
+                    ></div>
+                    <div
+                        id="dietIntake"
+                    >
+                        <h1>
+                            Modify My
+                            Food Intake
+                        </h1>
+                        <form
+                            id="modifyFood"
+                        >
+                            <label>
+                                Food
+                                Title
+                                <input
+                                    type="text"
+                                    id="diet-title"
+                                    required
+                                />
+                            </label>
+                            <label>
+                                Food
+                                Type
+                                <select
+                                    name="dietType"
+                                    id="diet-select"
+                                >
+                                    <option
+                                        value="veggie"
+                                    >
+                                        Veggie
+                                    </option>
+                                    <option
+                                        value="carbs"
+                                    >
+                                        Carbs
+                                    </option>
+                                    <option
+                                        value="proteins"
+                                    >
+                                        Proteins
+                                    </option>
+                                    <option
+                                        value="fruits"
+                                    >
+                                        Fruits
+                                    </option>
+                                </select>
+                            </label>
+                            <label>
+                                Food
+                                Intake
+                                <input
+                                    type="number"
+                                    id="diet-intake"
+                                    required
+                                />
+                            </label>
+                            <input
+                                type="submit"
+                            />
+                        </form>
+                        <h1>
+                            Modify my
+                            Goal
+                        </h1>
+                        <form
+                            id="modifyGoal"
+                        >
+                            <label>
+                                Veggie:
+                                <input
+                                    type="number"
+                                    min="0"
+                                    value="10"
+                                    id="veggie"
+                                    required
+                                />
+                            </label>
+                            <label>
+                                Carbs:
+                                <input
+                                    type="number"
+                                    min="0"
+                                    value="20"
+                                    id="carbs"
+                                    required
+                                />
+                            </label>
+                            <label>
+                                Proteins:
+                                <input
+                                    type="number"
+                                    min="0"
+                                    value="20"
+                                    id="proteins"
+                                    required
+                                />
+                            </label>
+                            <label>
+                                Fruits:
+                                <input
+                                    type="number"
+                                    min="0"
+                                    value="20"
+                                    id="fruits"
+                                    required
+                                />
+                            </label>
+                            <input
+                                type="submit"
+                            />
+                        </form>
+                    </div>
+                </section>
             </section>
-            <section
-                class="dietContent"
-            >
-                <div id="diet"></div>
-                <div
-                    id="diet2"
-                    class="hidden"
-                ></div>
-                <div
-                    id="dietIntake"
-                    class="hidden"
+            <section id="workoutPlan">
+                <zing-grid
+                    caption="Monday Plan"
+                    sorter
+                    search
+                    editor-controls
+                    pager
+                    page-size="3"
+                    page-size-options="2,3,6"
+                    id="workouts"
                 >
-                    <form>
-                        <input
-                            type="text"
-                        />
-                    </form>
-                </div>
+                    <zg-data></zg-data>
+                </zing-grid>
             </section>
         </section>
-        <section></section>
-        <div id="Workout Plan"></div>
         <script src="index.js"></script>
     </body>
 </html>

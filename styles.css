@@ -4,7 +4,7 @@
 }
 
 .chart {
-    width: 50%;
+    width: 30%;
 }
 
 .dietContent {
@@ -41,4 +41,21 @@
 
 .dietButton > button {
     flex-grow: 1;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+#workoutPlan {
+    width: 30%;
+}
+
+.content {
+    display: flex;
+}
+
+#workouts {
+    height: 70vh;
 }
