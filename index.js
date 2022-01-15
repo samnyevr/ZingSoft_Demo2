@@ -1,8 +1,8 @@
 let dietCategory = {
-    "veggie": 5,
-    "carbs": 2,
-    "proteins": 7,
-    "fruits": 10,
+    "veggie": 0,
+    "carbs": 0,
+    "proteins": 0,
+    "fruits": 0,
 };
 
 let dietGoal = {
@@ -19,9 +19,11 @@ let dietGoalInterval = {
     "frutis": dietGoal.fruits / 5
 }
 
-console.log(dietGoalInterval)
-
-const foodIntake = []
+const foodIntake = [{
+    "Food Title" : "Burrito",
+    "Food Type" : "Carbs",
+    "Calory Intake" : "5"
+}]
 
 
 
@@ -83,7 +85,7 @@ let myConfig = {
                 center: {  //Pivot Point
                     offset: 5,
                     size:5,
-                    'background-color': "white",
+                    'background-color': "aqua",
                     'border-color': "none"
                   }
             },
@@ -116,7 +118,7 @@ let myConfig = {
                 center: {  //Pivot Point
                     offset: 5,
                     size:5,
-                    'background-color': "white",
+                    'background-color': "aqua",
                     'border-color': "none"
                   }
             },
@@ -149,7 +151,7 @@ let myConfig = {
                 center: {  //Pivot Point
                     offset: 5,
                     size:5,
-                    'background-color': "white",
+                    'background-color': "aqua",
                     'border-color': "none"
                   }
             },
@@ -182,7 +184,7 @@ let myConfig = {
                 center: {  //Pivot Point
                     offset: 5,
                     size:5,
-                    'background-color': "white",
+                    'background-color': "aqua",
                     'border-color': "none"
                   }
             },
@@ -205,6 +207,13 @@ let myConfig = {
             ]
           }
       ]
+  };
+
+let myConfig3 = {
+    "type": "line",
+    "series": [{
+        "values": [0]
+    }]
   };
 
 function resetMyConfig() {
@@ -258,7 +267,7 @@ function resetMyConfig2() {
                   center: {  //Pivot Point
                       offset: 5,
                       size:5,
-                      'background-color': "white",
+                      'background-color': "aqua",
                       'border-color': "none"
                     }
               },
@@ -291,7 +300,7 @@ function resetMyConfig2() {
                   center: {  //Pivot Point
                       offset: 5,
                       size:5,
-                      'background-color': "white",
+                      'background-color': "aqua",
                       'border-color': "none"
                     }
               },
@@ -324,7 +333,7 @@ function resetMyConfig2() {
                   center: {  //Pivot Point
                       offset: 5,
                       size:5,
-                      'background-color': "white",
+                      'background-color': "aqua",
                       'border-color': "none"
                     }
               },
@@ -357,7 +366,7 @@ function resetMyConfig2() {
                   center: {  //Pivot Point
                       offset: 5,
                       size:5,
-                      'background-color': "white",
+                      'background-color': "aqua",
                       'border-color': "none"
                     }
               },
@@ -390,6 +399,9 @@ const dietModify = document.querySelector(".dietModify");
 const diet = document.querySelector("#diet");
 const diet2 = document.querySelector("#diet2");
 const dietIntake = document.querySelector("#dietIntake");
+
+
+const zgRef = document.querySelector('zing-grid');
 
 dietElement1.addEventListener("click", () => {
     if(diet.classList.contains("hidden")){
@@ -425,10 +437,11 @@ modifyFood.addEventListener("submit", e => {
         dietCategory[`${e.target[1].value}`] += parseInt(e.target[2].value, 10);
     }
     for(let i = 0; i < e.target.length-1; i++){
-        temp[e.target[i].id] = e.target[i].value;
+        temp[e.target[i].name] = e.target[i].value;
         if(i !== 1)
             e.target[i].value = "";
     }
+    console.log(temp)
     foodIntake.push(temp)
     resetMyConfig();
     zingchart.render({
@@ -447,6 +460,9 @@ modifyFood.addEventListener("submit", e => {
     diet.classList.remove("hidden");
     diet2.classList.add("hidden");
     dietIntake.classList.add("hidden");
+
+    
+    zgRef.setData(foodIntake);
 })
 
 
@@ -468,6 +484,8 @@ modifyGoal.addEventListener("submit", e => {
     dietIntake.classList.add("hidden");
 })
 
+
+
 zingchart.render({
     id: 'diet',
     data: myConfig,
@@ -480,40 +498,13 @@ zingchart.render({
     defaults: myTheme
 })
 
-window.onload = () => {
-    const data = [{
-        "Workout Name": "Bench Press",
-        "Sets": "3",
-        "Reps": "8"
-      },
-      {
-        "Workout Name": "Dead Lift",
-        "Sets": "5",
-        "Reps": "4"
-      },
-      {
-        "Workout Name": "Squat",
-        "Sets": "5",
-        "Reps": "3"
-      },
-      {
-        "Workout Name": "Bicep Curl",
-        "Sets": "2",
-        "Reps": "9"
-      },
-      {
-        "Workout Name": "Leg Press",
-        "Sets": "3",
-        "Reps": "8"
-      },
-      {
-        "Workout Name": "Lateral Raise",
-        "Sets": "3",
-        "Reps": "10"
-      }
-    ]
-  
-    const zgRef = document.querySelector('zing-grid');
-  
-    zgRef.setData(data);
-  }
+zingchart.render({
+    id: "calory",   
+    data: myConfig3,
+    width: "100%",
+    height: "100%"
+})
+
+window.onload = () =>{
+    zgRef.setData(foodIntake);
+}

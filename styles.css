@@ -49,13 +49,22 @@ form {
 }
 
 #workoutPlan {
-    width: 30%;
+    width: 100%;
+    height: 50%;
 }
 
 .content {
     display: flex;
 }
 
-#workouts {
-    height: 70vh;
+.sideBar {
+    display: flex;
+    width: 70%;
+    height: 80vh;
+    flex-direction: column;
+}
+
+#calory {
+    width: 100%;
+    height: 50%;
 }

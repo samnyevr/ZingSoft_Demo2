@@ -22,7 +22,9 @@
         />
     </head>
     <body>
-        <nav><h1>Fitness</h1></nav>
+        <nav>
+            <h1>Calory Tracking</h1>
+        </nav>
         <section class="content">
             <section class="chart">
                 <section
@@ -50,7 +52,6 @@
                 >
                     <div
                         id="diet"
-                        class="hidden"
                     ></div>
                     <div
                         id="diet2"
@@ -58,6 +59,7 @@
                     ></div>
                     <div
                         id="dietIntake"
+                        class="hidden"
                     >
                         <h1>
                             Modify My
@@ -70,6 +72,7 @@
                                 Food
                                 Title
                                 <input
+                                    name="Food Title"
                                     type="text"
                                     id="diet-title"
                                     required
@@ -79,7 +82,7 @@
                                 Food
                                 Type
                                 <select
-                                    name="dietType"
+                                    name="Food Type"
                                     id="diet-select"
                                 >
                                     <option
@@ -108,6 +111,7 @@
                                 Food
                                 Intake
                                 <input
+                                    name="Calory Intake"
                                     type="number"
                                     id="diet-intake"
                                     required
@@ -171,19 +175,22 @@
                     </div>
                 </section>
             </section>
-            <section id="workoutPlan">
-                <zing-grid
-                    caption="Monday Plan"
-                    sorter
-                    search
-                    editor-controls
-                    pager
-                    page-size="3"
-                    page-size-options="2,3,6"
-                    id="workouts"
+            <section class="sideBar">
+                <div id="calory"></div>
+                <section
+                    id="workoutPlan"
                 >
-                    <zg-data></zg-data>
-                </zing-grid>
+                    <zing-grid
+                        caption="Food Intake"
+                        sorter
+                        search
+                        pager
+                        page-size="3"
+                        page-size-options="2,3,6"
+                        id="workouts"
+                    >
+                    </zing-grid>
+                </section>
             </section>
         </section>
         <script src="index.js"></script>
