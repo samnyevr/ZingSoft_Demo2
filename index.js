@@ -319,6 +319,9 @@ let myConfig = {
   };
 
 let myConfig3 = {
+    "title": {
+        "text": "Calory by Meals"
+    },
     "type": "line",
     'scale-y': {
         'min-value':0,
@@ -614,6 +617,9 @@ function resetMyConfig2() {
 
 function resetMyConfig3() {
     myConfig3 = {
+        "title": {
+            "text": "Calory by Meals"
+        },
         "type": "line",
         'scale-y': {
             'min-value':0,
