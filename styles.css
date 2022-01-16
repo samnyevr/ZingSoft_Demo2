@@ -10,8 +10,6 @@
 .dietContent {
     background-color: white;
     padding: 20px;
-    border: 1px solid black;
-    box-shadow: 2px 2px 2px 2px grey;
     border-radius: 0 0 20px 20px;
     margin-right: 5px;
     height: 70vh;
@@ -20,18 +18,12 @@
 .dietButton button {
     border: none;
     background: none;
-    border-radius: 20px 20px 0 0;
-    border: 1px solid black;
-    border-bottom: 1px solid black;
-    border-left: none;
-    border-right: none;
+    border-radius: 20px;
     padding: 10px 15px;
-    
-    background: white;
+    background-color: lightgreen;
 }
 
 .dietButton button:hover {
-    border-bottom: 1px solid white;
 }
 
 .dietButton {
@@ -69,4 +61,47 @@ form {
 #calorie {
     width: 100%;
     height: 50%;
+}
+
+input {
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid rgb(60, 193, 238);
+}
+
+input:focus {
+    border: 1px solid rgb(60, 193, 238);
+    background-color: rgb(196, 235, 196);
+}
+
+#diet-select {
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid rgb(60, 193, 238);
+    margin-left: 5px;
+    padding: 5px;
+}
+
+input[type=text] {
+    width: 200px;
+    margin-left: 5px;
+}
+
+input[type=number] {
+    width: 50px;
+    margin-left: 5px;
+}
+
+input[type=submit] {
+    border: 1px solid rgb(117, 71, 247);
+    background-color: rgb(117, 71, 247);
+    color: white;
+    width: 100px;
+    align-self: flex-end;
+}
+
+zing-grid {
+    --zg-caption-background: white;
+    --zg-caption-color: black;
 }

@@ -57,19 +57,23 @@ let myConfig = {
     series:[
         {
             values:[dietCategory.veggie],
-            text:Object.keys(dietCategory)[0]
+            text:Object.keys(dietCategory)[0],
+            backgroundColor: '#d1f2a0',
             },
         {
             "text":Object.keys(dietCategory)[1],
-            "values":[dietCategory.carbs]
+            "values":[dietCategory.carbs],
+            backgroundColor: '#f09ce6',
             },
         {
             "text":Object.keys(dietCategory)[2],
-            "values":[dietCategory.proteins]
+            "values":[dietCategory.proteins],
+            backgroundColor: '#f2bfa0',
             },
         {
             "text":Object.keys(dietCategory)[3],
-            "values":[dietCategory.fruits]
+            "values":[dietCategory.fruits],
+            backgroundColor: '#9ca9f0',
             }
         ]
   };
@@ -106,15 +110,15 @@ let myConfig = {
                     size: 30,
                     rules: [{
                         rule: `%v <= ${dietGoal.veggie}`,
-                        backgroundColor: 'green'
+                        backgroundColor: '#c0ffb5'
                       },
                       {
                         rule: `%v > ${dietGoal.veggie} && %v < ${dietGoal.veggie * 2 - dietGoalInterval.veggie}`,
-                        backgroundColor: 'Yellow'
+                        backgroundColor: '#fffdb5'
                       },
                       {
                         rule: `%v >= ${dietGoal.veggie * 2 - dietGoalInterval.veggie}`,
-                        backgroundColor: 'red'
+                        backgroundColor: '#ffb6b5'
                       }
                     ]
                   }
@@ -166,15 +170,15 @@ let myConfig = {
                     size: 30,
                     rules: [{
                         rule: `%v <= ${dietGoal.carbs}`,
-                        backgroundColor: 'green'
+                        backgroundColor: '#c0ffb5'
                       },
                       {
                         rule: `%v > ${dietGoal.carbs} && %v < ${dietGoal.carbs * 2 - dietGoalInterval.carbs}`,
-                        backgroundColor: 'Yellow'
+                        backgroundColor: '#fffdb5'
                       },
                       {
                         rule: `%v >= ${dietGoal.carbs * 2 - dietGoalInterval.carbs}`,
-                        backgroundColor: 'red'
+                        backgroundColor: '#ffb6b5'
                       }
                     ]
                   }
@@ -225,15 +229,15 @@ let myConfig = {
                     size: 30,
                     rules: [{
                         rule: `%v <= ${dietGoal.proteins}`,
-                        backgroundColor: 'green'
+                        backgroundColor: '#c0ffb5'
                       },
                       {
                         rule: `%v > ${dietGoal.proteins} && %v < ${dietGoal.proteins * 2 - dietGoalInterval.proteins}`,
-                        backgroundColor: 'Yellow'
+                        backgroundColor: '#fffdb5'
                       },
                       {
                         rule: `%v >= ${dietGoal.proteins * 2 - dietGoalInterval.proteins}`,
-                        backgroundColor: 'red'
+                        backgroundColor: '#ffb6b5'
                       }
                     ]
                   }
@@ -284,15 +288,15 @@ let myConfig = {
                     size: 30,
                     rules: [{
                         rule: `%v <= ${dietGoal.fruits}`,
-                        backgroundColor: 'green'
+                        backgroundColor: '#c0ffb5'
                       },
                       {
                         rule: `%v > ${dietGoal.fruits} && %v < ${dietGoal.fruits * 2 - dietGoalInterval.frutis}`,
-                        backgroundColor: 'Yellow'
+                        backgroundColor: '#fffdb5'
                       },
                       {
                         rule: `%v >= ${dietGoal.fruits * 2 - dietGoalInterval.frutis}`,
-                        backgroundColor: 'red'
+                        backgroundColor: '#ffb6b5'
                       }
                     ]
                   }
@@ -323,9 +327,17 @@ let myConfig3 = {
         "text": "Calorie by Meals"
     },
     "type": "line",
+    'scale-x': {
+      'label': {
+        "text": "Meal"
+      }
+    },
     'scale-y': {
         'min-value':0,
-        'max-value':100
+        'max-value':100,
+        'label': {
+          "text":"Total Calorie"
+        }
       },
     "series": [{
         "values": calorieCount
@@ -402,15 +414,15 @@ function resetMyConfig2() {
                   size: 30,
                   rules: [{
                       rule: `%v <= ${dietGoal.veggie}`,
-                      backgroundColor: 'green'
+                      backgroundColor: '#c0ffb5'
                     },
                     {
                       rule: `%v > ${dietGoal.veggie} && %v < ${dietGoal.veggie * 2 - dietGoalInterval.veggie}`,
-                      backgroundColor: 'Yellow'
+                      backgroundColor: '#fffdb5'
                     },
                     {
                       rule: `%v >= ${dietGoal.veggie * 2 - dietGoalInterval.veggie}`,
-                      backgroundColor: 'red'
+                      backgroundColor: '#ffb6b5'
                     }
                   ]
                 }
@@ -462,15 +474,15 @@ function resetMyConfig2() {
                   size: 30,
                   rules: [{
                       rule: `%v <= ${dietGoal.carbs}`,
-                      backgroundColor: 'green'
+                      backgroundColor: '#c0ffb5'
                     },
                     {
                       rule: `%v > ${dietGoal.carbs} && %v < ${dietGoal.carbs * 2 - dietGoalInterval.carbs}`,
-                      backgroundColor: 'Yellow'
+                      backgroundColor: '#fffdb5'
                     },
                     {
                       rule: `%v >= ${dietGoal.carbs * 2 - dietGoalInterval.carbs}`,
-                      backgroundColor: 'red'
+                      backgroundColor: '#ffb6b5'
                     }
                   ]
                 }
@@ -521,15 +533,15 @@ function resetMyConfig2() {
                   size: 30,
                   rules: [{
                       rule: `%v <= ${dietGoal.proteins}`,
-                      backgroundColor: 'green'
+                      backgroundColor: '#c0ffb5'
                     },
                     {
                       rule: `%v > ${dietGoal.proteins} && %v < ${dietGoal.proteins * 2 - dietGoalInterval.proteins}`,
-                      backgroundColor: 'Yellow'
+                      backgroundColor: '#fffdb5'
                     },
                     {
                       rule: `%v >= ${dietGoal.proteins * 2 - dietGoalInterval.proteins}`,
-                      backgroundColor: 'red'
+                      backgroundColor: '#ffb6b5'
                     }
                   ]
                 }
@@ -580,15 +592,15 @@ function resetMyConfig2() {
                   size: 30,
                   rules: [{
                       rule: `%v <= ${dietGoal.fruits}`,
-                      backgroundColor: 'green'
+                      backgroundColor: '#c0ffb5'
                     },
                     {
                       rule: `%v > ${dietGoal.fruits} && %v < ${dietGoal.fruits * 2 - dietGoalInterval.frutis}`,
-                      backgroundColor: 'Yellow'
+                      backgroundColor: '#fffdb5'
                     },
                     {
                       rule: `%v >= ${dietGoal.fruits * 2 - dietGoalInterval.frutis}`,
-                      backgroundColor: 'red'
+                      backgroundColor: '#ffb6b5'
                     }
                   ]
                 }
