@@ -6,10 +6,10 @@ let dietCategory = {
 };
 
 let dietGoal = {
-    "veggie": 10,
-    "carbs": 20,
-    "proteins": 20,
-    "fruits": 20
+    "veggie": 350,
+    "carbs": 500,
+    "proteins": 1000,
+    "fruits": 500
 }
 
 let dietGoalInterval = {
@@ -334,7 +334,7 @@ let myConfig3 = {
     },
     'scale-y': {
         'min-value':0,
-        'max-value':100,
+        'max-value':3000,
         'label': {
           "text":"Total Calorie"
         }
@@ -629,18 +629,26 @@ function resetMyConfig2() {
 
 function resetMyConfig3() {
     myConfig3 = {
-        "title": {
-            "text": "calorie by Meals"
+      "title": {
+          "text": "Calorie by Meals"
+      },
+      "type": "line",
+      'scale-x': {
+        'label': {
+          "text": "Meal"
+        }
+      },
+      'scale-y': {
+          'min-value':0,
+          'max-value':3000,
+          'label': {
+            "text":"Total Calorie"
+          }
         },
-        "type": "line",
-        'scale-y': {
-            'min-value':0,
-            'max-value':100
-          },
-        "series": [{
-            "values": calorieCount
-        }]
-      };
+      "series": [{
+          "values": calorieCount
+      }]
+    };
 }
 
 
