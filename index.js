@@ -24,16 +24,16 @@ console.log(dietGoalInterval)
 const foodIntake = [{
     "Food Title" : "",
     "Food Type" : "",
-    "Calory Intake" : 0
+    "calorie Intake" : 0
 }]
 
-const caloryCount = [0]
+const calorieCount = [0]
 
 
 
 let myTheme = {
     graph: {
-        backgroundColor: "aqua"
+        backgroundColor: "white"
     }
 }
 
@@ -89,7 +89,7 @@ let myConfig = {
                 center: {  //Pivot Point
                     offset: 5,
                     size:5,
-                    'background-color': "aqua",
+                    'background-color': "white",
                     'border-color': "none"
                   },bold: "true",
                   labels: ["0", "", "", `Goal`, "Over", "Danger"],
@@ -149,7 +149,7 @@ let myConfig = {
                 center: {  //Pivot Point
                     offset: 5,
                     size:5,
-                    'background-color': "aqua",
+                    'background-color': "white",
                     'border-color': "none"
                   },
                   labels: ["0", "", "", `Goal`, "Over", "Danger"],
@@ -208,7 +208,7 @@ let myConfig = {
                 center: {  //Pivot Point
                     offset: 5,
                     size:5,
-                    'background-color': "aqua",
+                    'background-color': "white",
                     'border-color': "none"
                   },
                   labels: ["0", "", "", `Goal`, "Over", "Danger"],
@@ -267,7 +267,7 @@ let myConfig = {
                 center: {  //Pivot Point
                     offset: 5,
                     size:5,
-                    'background-color': "aqua",
+                    'background-color': "white",
                     'border-color': "none"
                   },
                   labels: ["0", "", "", `Goal`, "Over", "Danger"],
@@ -320,7 +320,7 @@ let myConfig = {
 
 let myConfig3 = {
     "title": {
-        "text": "Calory by Meals"
+        "text": "Calorie by Meals"
     },
     "type": "line",
     'scale-y': {
@@ -328,12 +328,12 @@ let myConfig3 = {
         'max-value':100
       },
     "series": [{
-        "values": caloryCount
+        "values": calorieCount
     }]
   };
 
-function setCalory() {
-    caloryCount.push(caloryCount[caloryCount.length-1] + parseInt(foodIntake[foodIntake.length-1]["Calory Intake"]))
+function setcalorie() {
+    calorieCount.push(calorieCount[calorieCount.length-1] + parseInt(foodIntake[foodIntake.length-1]["calorie Intake"]))
 }
 
 function resetMyConfig() {
@@ -371,254 +371,254 @@ function resetMyConfig() {
 }
 
 function resetMyConfig2() {
-    myconfig2 = {
-        layout: "2x2",
-        graphset: [
-            {
-              "type": 'gauge',
-              "title":{ 
-                  text: Object.keys(dietCategory)[0]
-              },
-              "scale-r": {
-                  "aperture": 200,
-                  "values": `0:${dietGoal.veggie * 2}:${dietGoalInterval.veggie}`,
-                  center: {  //Pivot Point
-                      offset: 5,
-                      size:5,
-                      'background-color': "aqua",
-                      'border-color': "none"
-                    },bold: "true",
-                    labels: ["0", "", "", `Goal`, "Over", "Danger"],
-                    item: {    //Scale Label Styling
-                      'font-color': "black",
-                      'font-family': "Georgia, serif",
-                      'font-size':15,
-                      'font-weight': "bold",
-                      'offset-r': -50,
-                      'offset-x': -15,
-                      angle: "5"    //To adjust the angle of your scale labels.
-                    },
-                    ring: {
-                      size: 30,
-                      rules: [{
-                          rule: `%v <= ${dietGoal.veggie}`,
-                          backgroundColor: 'green'
-                        },
-                        {
-                          rule: `%v > ${dietGoal.veggie} && %v < ${dietGoal.veggie * 2 - dietGoalInterval.veggie}`,
-                          backgroundColor: 'Yellow'
-                        },
-                        {
-                          rule: `%v >= ${dietGoal.veggie * 2 - dietGoalInterval.veggie}`,
-                          backgroundColor: 'red'
-                        }
-                      ]
-                    }
-              },
-              plot: {
-                  'value-box': { //Value Boxes
-                    placement: "center",  //Specify placement at "center", "tip", or "edge".
-                    text: "%v",
-                    'font-color': "black",
-                    'font-size': 24,
-                    offsetY: 15
-                  },
-                  
+  myconfig2 = {
+    layout: "2x2",
+    graphset: [
+        {
+          "type": 'gauge',
+          "title":{ 
+              text: Object.keys(dietCategory)[0]
+          },
+          "scale-r": {
+              "aperture": 200,
+              "values": `0:${dietGoal.veggie * 2}:${dietGoalInterval.veggie}`,
+              center: {  //Pivot Point
+                  offset: 5,
+                  size:5,
+                  'background-color': "white",
+                  'border-color': "none"
+                },bold: "true",
+                labels: ["0", "", "", `Goal`, "Over", "Danger"],
+                item: {    //Scale Label Styling
+                  'font-color': "black",
+                  'font-family': "Georgia, serif",
+                  'font-size':15,
+                  'font-weight': "bold",
+                  'offset-r': -50,
+                  'offset-x': -15,
+                  angle: "5"    //To adjust the angle of your scale labels.
                 },
-              series: [
-                  {
-                  indicator: [10,0,0,10,0.1],
-                  values: [dietCategory.veggie],
-                  "csize":"4%",
-                  "background-color": "#000000"
+                ring: {
+                  size: 30,
+                  rules: [{
+                      rule: `%v <= ${dietGoal.veggie}`,
+                      backgroundColor: 'green'
+                    },
+                    {
+                      rule: `%v > ${dietGoal.veggie} && %v < ${dietGoal.veggie * 2 - dietGoalInterval.veggie}`,
+                      backgroundColor: 'Yellow'
+                    },
+                    {
+                      rule: `%v >= ${dietGoal.veggie * 2 - dietGoalInterval.veggie}`,
+                      backgroundColor: 'red'
+                    }
+                  ]
                 }
-              ]
+          },
+          plot: {
+              'value-box': { //Value Boxes
+                placement: "center",  //Specify placement at "center", "tip", or "edge".
+                text: "%v",
+                'font-color': "black",
+                'font-size': 24,
+                offsetY: 15
+              },
+              
             },
-            {
-              type: 'gauge',
-              "title":{ 
-                  text: Object.keys(dietCategory)[1]
-              },
-              "scale-r": {
-                  "aperture": 200,
-                  "values": `0:${dietGoal.carbs * 2}:${dietGoalInterval.carbs}`,
-                  center: {  //Pivot Point
-                      offset: 5,
-                      size:5,
-                      'background-color': "aqua",
-                      'border-color': "none"
-                    },
-                    labels: ["0", "", "", `Goal`, "Over", "Danger"],
-                    item: {    //Scale Label Styling
-                      'font-color': "black",
-                      'font-family': "Georgia, serif",
-                      'font-size':15,
-                      'font-weight': "bold",
-                      'offset-r': -50,
-                      'offset-x': -15,
-                      angle: "5"    //To adjust the angle of your scale labels.
-                    },
-                    ring: {
-                      size: 30,
-                      rules: [{
-                          rule: `%v <= ${dietGoal.carbs}`,
-                          backgroundColor: 'green'
-                        },
-                        {
-                          rule: `%v > ${dietGoal.carbs} && %v < ${dietGoal.carbs * 2 - dietGoalInterval.carbs}`,
-                          backgroundColor: 'Yellow'
-                        },
-                        {
-                          rule: `%v >= ${dietGoal.carbs * 2 - dietGoalInterval.carbs}`,
-                          backgroundColor: 'red'
-                        }
-                      ]
-                    }
-              },
-              plot: {
-                  'value-box': { //Value Boxes
-                    placement: "center",  //Specify placement at "center", "tip", or "edge".
-                    text: "%v",
-                    'font-color': "black",
-                    'font-size': 24,
-                    offsetY: 15
-                  }
-                },
-              series: [
-                  {
-                  indicator: [10,0,0,10,0.1],
-                  "values": [dietCategory.carbs],
-                  "csize":"4%",
-                  "background-color": "#000000"
-                }
-              ]
-            },
-            {
-              type: 'gauge',
-              "title":{ 
-                  text: Object.keys(dietCategory)[2]
-              },
-              "scale-r": {
-                  "aperture": 200,
-                  "values": `0:${dietGoal.proteins * 2}:${dietGoalInterval.proteins}`,
-                  center: {  //Pivot Point
-                      offset: 5,
-                      size:5,
-                      'background-color': "aqua",
-                      'border-color': "none"
-                    },
-                    labels: ["0", "", "", `Goal`, "Over", "Danger"],
-                    item: {    //Scale Label Styling
-                      'font-color': "black",
-                      'font-family': "Georgia, serif",
-                      'font-size':15,
-                      'font-weight': "bold",
-                      'offset-r': -50,
-                      'offset-x': -15,
-                      angle: "5"    //To adjust the angle of your scale labels.
-                    },
-                    ring: {
-                      size: 30,
-                      rules: [{
-                          rule: `%v <= ${dietGoal.proteins}`,
-                          backgroundColor: 'green'
-                        },
-                        {
-                          rule: `%v > ${dietGoal.proteins} && %v < ${dietGoal.proteins * 2 - dietGoalInterval.proteins}`,
-                          backgroundColor: 'Yellow'
-                        },
-                        {
-                          rule: `%v >= ${dietGoal.proteins * 2 - dietGoalInterval.proteins}`,
-                          backgroundColor: 'red'
-                        }
-                      ]
-                    }
-              },
-              plot: {
-                  'value-box': { //Value Boxes
-                    placement: "center",  //Specify placement at "center", "tip", or "edge".
-                    text: "%v",
-                    'font-color': "black",
-                    'font-size': 24,
-                    offsetY: 15
-                  }
-                },
-              series: [
-                  {
-                      indicator: [10,0,0,10,0.1],
-                      "values": [dietCategory.proteins],
-                      "csize":"4%",
-                      "background-color": "#000000"
-                }
-              ]
-            },
-            {
-              type: 'gauge',
-              "title":{ 
-                  text: Object.keys(dietCategory)[3]
-              },
-              "scale-r": {
-                  "aperture": 200,
-                  "values": `0:${dietGoal.fruits*2}:${dietGoalInterval.frutis}`,
-                  center: {  //Pivot Point
-                      offset: 5,
-                      size:5,
-                      'background-color': "aqua",
-                      'border-color': "none"
-                    },
-                    labels: ["0", "", "", `Goal`, "Over", "Danger"],
-                    item: {    //Scale Label Styling
-                      'font-color': "black",
-                      'font-family': "Georgia, serif",
-                      'font-size':15,
-                      'font-weight': "bold",
-                      'offset-r': -50,
-                      'offset-x': -15,
-                      angle: "5"    //To adjust the angle of your scale labels.
-                    },
-                    ring: {
-                      size: 30,
-                      rules: [{
-                          rule: `%v <= ${dietGoal.fruits}`,
-                          backgroundColor: 'green'
-                        },
-                        {
-                          rule: `%v > ${dietGoal.fruits} && %v < ${dietGoal.fruits * 2 - dietGoalInterval.frutis}`,
-                          backgroundColor: 'Yellow'
-                        },
-                        {
-                          rule: `%v >= ${dietGoal.fruits * 2 - dietGoalInterval.frutis}`,
-                          backgroundColor: 'red'
-                        }
-                      ]
-                    }
-              },
-              plot: {
-                  'value-box': { //Value Boxes
-                    placement: "center",  //Specify placement at "center", "tip", or "edge".
-                    text: "%v",
-                    'font-color': "black",
-                    'font-size': 24,
-                    offsetY: 15
-                  }
-                },
-              series: [
-                  {
-                      indicator: [10,0,0,10,0.1],
-                      "values": [dietCategory.fruits],
-                      "csize":"4%",
-                      "background-color": "#000000"
-                }
-              ]
+          series: [
+              {
+              indicator: [10,0,0,10,0.1],
+              values: [dietCategory.veggie],
+              "csize":"4%",
+              "background-color": "#000000"
             }
-        ]
-    };
+          ]
+        },
+        {
+          type: 'gauge',
+          "title":{ 
+              text: Object.keys(dietCategory)[1]
+          },
+          "scale-r": {
+              "aperture": 200,
+              "values": `0:${dietGoal.carbs * 2}:${dietGoalInterval.carbs}`,
+              center: {  //Pivot Point
+                  offset: 5,
+                  size:5,
+                  'background-color': "white",
+                  'border-color': "none"
+                },
+                labels: ["0", "", "", `Goal`, "Over", "Danger"],
+                item: {    //Scale Label Styling
+                  'font-color': "black",
+                  'font-family': "Georgia, serif",
+                  'font-size':15,
+                  'font-weight': "bold",
+                  'offset-r': -50,
+                  'offset-x': -15,
+                  angle: "5"    //To adjust the angle of your scale labels.
+                },
+                ring: {
+                  size: 30,
+                  rules: [{
+                      rule: `%v <= ${dietGoal.carbs}`,
+                      backgroundColor: 'green'
+                    },
+                    {
+                      rule: `%v > ${dietGoal.carbs} && %v < ${dietGoal.carbs * 2 - dietGoalInterval.carbs}`,
+                      backgroundColor: 'Yellow'
+                    },
+                    {
+                      rule: `%v >= ${dietGoal.carbs * 2 - dietGoalInterval.carbs}`,
+                      backgroundColor: 'red'
+                    }
+                  ]
+                }
+          },
+          plot: {
+              'value-box': { //Value Boxes
+                placement: "center",  //Specify placement at "center", "tip", or "edge".
+                text: "%v",
+                'font-color': "black",
+                'font-size': 24,
+                offsetY: 15
+              }
+            },
+          series: [
+              {
+              indicator: [10,0,0,10,0.1],
+              "values": [dietCategory.carbs],
+              "csize":"4%",
+              "background-color": "#000000"
+            }
+          ]
+        },
+        {
+          type: 'gauge',
+          "title":{ 
+              text: Object.keys(dietCategory)[2]
+          },
+          "scale-r": {
+              "aperture": 200,
+              "values": `0:${dietGoal.proteins * 2}:${dietGoalInterval.proteins}`,
+              center: {  //Pivot Point
+                  offset: 5,
+                  size:5,
+                  'background-color': "white",
+                  'border-color': "none"
+                },
+                labels: ["0", "", "", `Goal`, "Over", "Danger"],
+                item: {    //Scale Label Styling
+                  'font-color': "black",
+                  'font-family': "Georgia, serif",
+                  'font-size':15,
+                  'font-weight': "bold",
+                  'offset-r': -50,
+                  'offset-x': -15,
+                  angle: "5"    //To adjust the angle of your scale labels.
+                },
+                ring: {
+                  size: 30,
+                  rules: [{
+                      rule: `%v <= ${dietGoal.proteins}`,
+                      backgroundColor: 'green'
+                    },
+                    {
+                      rule: `%v > ${dietGoal.proteins} && %v < ${dietGoal.proteins * 2 - dietGoalInterval.proteins}`,
+                      backgroundColor: 'Yellow'
+                    },
+                    {
+                      rule: `%v >= ${dietGoal.proteins * 2 - dietGoalInterval.proteins}`,
+                      backgroundColor: 'red'
+                    }
+                  ]
+                }
+          },
+          plot: {
+              'value-box': { //Value Boxes
+                placement: "center",  //Specify placement at "center", "tip", or "edge".
+                text: "%v",
+                'font-color': "black",
+                'font-size': 24,
+                offsetY: 15
+              }
+            },
+          series: [
+              {
+                  indicator: [10,0,0,10,0.1],
+                  "values": [dietCategory.proteins],
+                  "csize":"4%",
+                  "background-color": "#000000"
+            }
+          ]
+        },
+        {
+          type: 'gauge',
+          "title":{ 
+              text: Object.keys(dietCategory)[3]
+          },
+          "scale-r": {
+              "aperture": 200,
+              "values": `0:${dietGoal.fruits*2}:${dietGoalInterval.frutis}`,
+              center: {  //Pivot Point
+                  offset: 5,
+                  size:5,
+                  'background-color': "white",
+                  'border-color': "none"
+                },
+                labels: ["0", "", "", `Goal`, "Over", "Danger"],
+                item: {    //Scale Label Styling
+                  'font-color': "black",
+                  'font-family': "Georgia, serif",
+                  'font-size':15,
+                  'font-weight': "bold",
+                  'offset-r': -50,
+                  'offset-x': -15,
+                  angle: "5"    //To adjust the angle of your scale labels.
+                },
+                ring: {
+                  size: 30,
+                  rules: [{
+                      rule: `%v <= ${dietGoal.fruits}`,
+                      backgroundColor: 'green'
+                    },
+                    {
+                      rule: `%v > ${dietGoal.fruits} && %v < ${dietGoal.fruits * 2 - dietGoalInterval.frutis}`,
+                      backgroundColor: 'Yellow'
+                    },
+                    {
+                      rule: `%v >= ${dietGoal.fruits * 2 - dietGoalInterval.frutis}`,
+                      backgroundColor: 'red'
+                    }
+                  ]
+                }
+          },
+          plot: {
+              'value-box': { //Value Boxes
+                placement: "center",  //Specify placement at "center", "tip", or "edge".
+                text: "%v",
+                'font-color': "black",
+                'font-size': 24,
+                offsetY: 15
+              }
+            },
+          series: [
+              {
+                  indicator: [10,0,0,10,0.1],
+                  "values": [dietCategory.fruits],
+                  "csize":"4%",
+                  "background-color": "#000000"
+            }
+          ]
+        }
+    ]
+};
 }
 
 function resetMyConfig3() {
     myConfig3 = {
         "title": {
-            "text": "Calory by Meals"
+            "text": "calorie by Meals"
         },
         "type": "line",
         'scale-y': {
@@ -626,7 +626,7 @@ function resetMyConfig3() {
             'max-value':100
           },
         "series": [{
-            "values": caloryCount
+            "values": calorieCount
         }]
       };
 }
@@ -680,7 +680,7 @@ modifyFood.addEventListener("submit", e => {
     }
     foodIntake.push(temp)
 
-    setCalory();
+    setcalorie();
 
 
     resetMyConfig();
@@ -699,7 +699,7 @@ modifyFood.addEventListener("submit", e => {
 
     resetMyConfig3();
     zingchart.render({
-        id: "calory",
+        id: "calorie",
         data: myConfig3,
     width: "100%",
     height: "100%"
@@ -720,7 +720,7 @@ modifyGoal.addEventListener("submit", e => {
     e.preventDefault();
     for(let i = 0; i < e.target.length-1; i++){
         dietGoal[`${e.target[i].id}`] = e.target[i].value
-        dietGoalInterval[`${e.target[i].id}`] = dietGoal[`${e.target[i].id}`] / 5
+        dietGoalInterval[`${e.target[i].id}`] = dietGoal[`${e.target[i].id}`] * 2 / 5
     }
     resetMyConfig2();
     zingchart.render({
@@ -749,7 +749,7 @@ zingchart.render({
 })
 
 zingchart.render({
-    id: "calory",   
+    id: "calorie",   
     data: myConfig3,
     width: "100%",
     height: "100%"
