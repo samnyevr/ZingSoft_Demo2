@@ -21,10 +21,13 @@
     border-radius: 20px;
     padding: 10px 15px;
     background-color: lightgreen;
+    border: 1px solid lightgreen;
 }
 
 .dietButton button:hover {
+    background-color: white;
 }
+
 
 .dietButton {
     margin: 0;
