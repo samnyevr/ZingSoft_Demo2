@@ -18,9 +18,6 @@ let dietGoalInterval = {
     "proteins": dietGoal.proteins * 2 / 5,
     "frutis": dietGoal.fruits * 2 / 5
 }
-
-console.log(dietGoal)
-console.log(dietGoalInterval)
 const foodIntake = [{
     "Food Title" : "",
     "Food Type" : "",
@@ -728,9 +725,6 @@ modifyFood.addEventListener("submit", e => {
     diet.classList.remove("hidden");
     diet2.classList.add("hidden");
     dietIntake.classList.add("hidden");
-
-    
-
     
     zgRef.setData(foodIntake);
 })
